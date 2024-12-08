@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import BooksContext from "../context/books";
 
-function CreateBook ({ onCreate }) {
+function CreateBook () {
 
     // defining a title state variable 
     const [title, setTitle] = useState('');
 
+    // Accessing data from Context
+    const { createBook } = useContext(BooksContext);
+
     // Here handling the form submit
     const handleSubmit = (event) => {
         event.preventDefault();
-        onCreate(title);
+        createBook(title);
         setTitle("");
     }
 
