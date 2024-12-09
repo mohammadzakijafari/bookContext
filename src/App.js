@@ -11,7 +11,7 @@ function App () {
     // using useEffect for rendering purpose
     useEffect(() => {
         fetchBooks();
-    }, []);
+    }, [fetchBooks]);
 
     return (
         <div className="app">
